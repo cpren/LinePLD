@@ -2,43 +2,83 @@
   <block type="comment_comment" id="11" x="1" y="1">
     <field name="TEXT">Line Following With Variables</field>
     <next>
-      <block type="controls_whileUntil" id="38" inline="false">
-        <field name="MODE">UNTIL</field>
-        <value name="NUMBER">
-          <block type="sensor_button" id="482">
-            <field name="OBJECT">UP</field>
-          </block>
-        </value>
-        <statement name="DO">
-          <block type="movement_leftmotor" id="21" inline="true">
-            <value name="MOVLEFT">
-              <block type="math_arithmetic" id="75" inline="true">
+      <block type="variables_set" id="505" inline="true">
+        <field name="VAR">Y</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="555" inline="true">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <block type="math_arithmetic" id="534" inline="true">
                 <field name="OP">MINUS</field>
                 <value name="A">
-                  <block type="math_number" id="82">
-                    <field name="NUM">60</field>
+                  <block type="sensor_spectrometer" id="541">
+                    <field name="LIGHT">BLUE</field>
                   </block>
                 </value>
                 <value name="B">
-                  <block type="sensor_spectrometer" id="261">
-                    <field name="LIGHT">BLUE</field>
+                  <block type="math_number" id="548">
+                    <field name="NUM">92</field>
                   </block>
                 </value>
               </block>
             </value>
-            <next>
-              <block type="movement_rightmotor" id="31" inline="true">
-                <value name="MOVRIGHT">
-                  <block type="sensor_spectrometer" id="459">
-                    <field name="LIGHT">BLUE</field>
+            <value name="B">
+              <block type="math_number" id="562">
+                <field name="NUM">5.2</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_whileUntil" id="38" inline="false">
+            <field name="MODE">UNTIL</field>
+            <value name="NUMBER">
+              <block type="sensor_button" id="482">
+                <field name="OBJECT">UP</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="movement_leftmotor" id="21" inline="true">
+                <value name="MOVLEFT">
+                  <block type="math_arithmetic" id="489" inline="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="math_number" id="520">
+                        <field name="NUM">60</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="513">
+                        <field name="VAR">Y</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
+                <next>
+                  <block type="movement_rightmotor" id="31" inline="true">
+                    <value name="MOVRIGHT">
+                      <block type="math_arithmetic" id="503" inline="true">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <block type="math_number" id="527">
+                            <field name="NUM">60</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="509">
+                            <field name="VAR">Y</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
+            </statement>
+            <next>
+              <block type="movement_stutter" id="443"></block>
             </next>
           </block>
-        </statement>
-        <next>
-          <block type="movement_stutter" id="443"></block>
         </next>
       </block>
     </next>
