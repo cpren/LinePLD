@@ -2,79 +2,79 @@
   <block type="comment_comment" id="1" x="21" y="32">
     <field name="TEXT">Line Following With Variables</field>
     <next>
-      <block type="variables_set" id="26" inline="true">
-        <field name="VAR">A</field>
-        <value name="VALUE">
-          <block type="math_arithmetic" id="8" inline="true">
-            <field name="OP">MINUS</field>
-            <value name="A">
-              <block type="sensor_spectrometer" id="9">
-                <field name="LIGHT">BLUE</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="math_number" id="10">
-                <field name="NUM">92.5</field>
-              </block>
-            </value>
+      <block type="controls_whileUntil" id="2" inline="false">
+        <field name="MODE">UNTIL</field>
+        <value name="NUMBER">
+          <block type="sensor_button" id="3">
+            <field name="OBJECT">UP</field>
           </block>
         </value>
-        <next>
-          <block type="variables_set" id="22" inline="true">
-            <field name="VAR">Y</field>
-            <value name="VALUE">
-              <block type="math_arithmetic" id="7" inline="true">
-                <field name="OP">MULTIPLY</field>
+        <statement name="DO">
+          <block type="movement_leftmotor" id="4" inline="true">
+            <value name="MOVLEFT">
+              <block type="math_arithmetic" id="5" inline="true">
+                <field name="OP">ADD</field>
                 <value name="A">
-                  <block type="variables_get" id="39">
-                    <field name="VAR">A</field>
+                  <block type="math_number" id="6">
+                    <field name="NUM">60</field>
                   </block>
                 </value>
                 <value name="B">
-                  <block type="math_number" id="11">
-                    <field name="NUM">5.2</field>
+                  <block type="variables_get" id="45">
+                    <field name="VAR">Y</field>
                   </block>
                 </value>
               </block>
             </value>
             <next>
-              <block type="controls_whileUntil" id="2" inline="false">
-                <field name="MODE">UNTIL</field>
-                <value name="NUMBER">
-                  <block type="sensor_button" id="3">
-                    <field name="OBJECT">UP</field>
+              <block type="movement_rightmotor" id="12" inline="true">
+                <value name="MOVRIGHT">
+                  <block type="math_arithmetic" id="13" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="math_number" id="14">
+                        <field name="NUM">60</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="51">
+                        <field name="VAR">Y</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
-                <statement name="DO">
-                  <block type="movement_leftmotor" id="4" inline="true">
-                    <value name="MOVLEFT">
-                      <block type="math_arithmetic" id="5" inline="true">
-                        <field name="OP">ADD</field>
+                <next>
+                  <block type="variables_set" id="26" inline="true">
+                    <field name="VAR">A</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="8" inline="true">
+                        <field name="OP">MINUS</field>
                         <value name="A">
-                          <block type="math_number" id="6">
-                            <field name="NUM">60</field>
+                          <block type="sensor_spectrometer" id="9">
+                            <field name="LIGHT">BLUE</field>
                           </block>
                         </value>
                         <value name="B">
-                          <block type="variables_get" id="45">
-                            <field name="VAR">Y</field>
+                          <block type="math_number" id="10">
+                            <field name="NUM">92.5</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <next>
-                      <block type="movement_rightmotor" id="12" inline="true">
-                        <value name="MOVRIGHT">
-                          <block type="math_arithmetic" id="13" inline="true">
-                            <field name="OP">MINUS</field>
+                      <block type="variables_set" id="22" inline="true">
+                        <field name="VAR">Y</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="7" inline="true">
+                            <field name="OP">MULTIPLY</field>
                             <value name="A">
-                              <block type="math_number" id="14">
-                                <field name="NUM">60</field>
+                              <block type="variables_get" id="39">
+                                <field name="VAR">A</field>
                               </block>
                             </value>
                             <value name="B">
-                              <block type="variables_get" id="51">
-                                <field name="VAR">Y</field>
+                              <block type="math_number" id="11">
+                                <field name="NUM">5.2</field>
                               </block>
                             </value>
                           </block>
@@ -82,13 +82,13 @@
                       </block>
                     </next>
                   </block>
-                </statement>
-                <next>
-                  <block type="movement_stutter" id="20"></block>
                 </next>
               </block>
             </next>
           </block>
+        </statement>
+        <next>
+          <block type="movement_stutter" id="20"></block>
         </next>
       </block>
     </next>
