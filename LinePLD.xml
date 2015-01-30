@@ -16,7 +16,7 @@
                 <field name="OP">ADD</field>
                 <value name="A">
                   <block type="math_number" id="82">
-                    <field name="NUM">15</field>
+                    <field name="NUM">12</field>
                   </block>
                 </value>
                 <value name="B">
@@ -33,7 +33,7 @@
                     <field name="OP">MINUS</field>
                     <value name="A">
                       <block type="math_number" id="311">
-                        <field name="NUM">85</field>
+                        <field name="NUM">83</field>
                       </block>
                     </value>
                     <value name="B">
