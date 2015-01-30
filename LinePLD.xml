@@ -2,41 +2,51 @@
   <block type="comment_comment" id="11" x="1" y="1">
     <field name="TEXT">Line Following With Variables</field>
     <next>
-      <block type="controls_whileUntil" id="38" inline="false">
-        <field name="MODE">WHILE</field>
-        <value name="NUMBER">
-          <block type="sensor_button" id="148">
-            <field name="OBJECT">UP</field>
+      <block type="variables_set" id="207" inline="true">
+        <field name="VAR">Data</field>
+        <value name="VALUE">
+          <block type="sensor_spectrometer" id="61">
+            <field name="LIGHT">BLUE</field>
           </block>
         </value>
-        <statement name="DO">
-          <block type="movement_leftmotor" id="21" inline="true">
-            <value name="MOVLEFT">
-              <block type="math_arithmetic" id="75" inline="true">
-                <field name="OP">MINUS</field>
-                <value name="A">
-                  <block type="math_number" id="82">
-                    <field name="NUM">100</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="sensor_spectrometer" id="54">
-                    <field name="LIGHT">BLUE</field>
-                  </block>
-                </value>
+        <next>
+          <block type="controls_whileUntil" id="38" inline="false">
+            <field name="MODE">WHILE</field>
+            <value name="NUMBER">
+              <block type="sensor_button" id="148">
+                <field name="OBJECT">UP</field>
               </block>
             </value>
-            <next>
-              <block type="movement_rightmotor" id="31" inline="true">
-                <value name="MOVRIGHT">
-                  <block type="sensor_spectrometer" id="61">
-                    <field name="LIGHT">BLUE</field>
+            <statement name="DO">
+              <block type="movement_leftmotor" id="21" inline="true">
+                <value name="MOVLEFT">
+                  <block type="math_arithmetic" id="75" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="math_number" id="82">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="244">
+                        <field name="VAR">Data</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
+                <next>
+                  <block type="movement_rightmotor" id="31" inline="true">
+                    <value name="MOVRIGHT">
+                      <block type="variables_get" id="254">
+                        <field name="VAR">Data</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
-            </next>
+            </statement>
           </block>
-        </statement>
+        </next>
       </block>
     </next>
   </block>
