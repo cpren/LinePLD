@@ -3,7 +3,7 @@
     <field name="TEXT">Line Following With Variables</field>
     <next>
       <block type="controls_whileUntil" id="38" inline="false">
-        <field name="MODE">WHILE</field>
+        <field name="MODE">UNTIL</field>
         <value name="NUMBER">
           <block type="math_shift" id="404" inline="true">
             <field name="OP">RIGHT</field>
@@ -59,7 +59,7 @@
         </statement>
         <next>
           <block type="controls_whileUntil" id="327" inline="false">
-            <field name="MODE">WHILE</field>
+            <field name="MODE">UNTIL</field>
             <value name="NUMBER">
               <block type="math_shift" id="411" inline="true">
                 <field name="OP">LEFT</field>
