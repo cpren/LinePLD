@@ -22,7 +22,7 @@
                 </value>
                 <value name="B">
                   <block type="math_number" id="10">
-                    <field name="NUM">92.5</field>
+                    <field name="NUM">40</field>
                   </block>
                 </value>
               </block>
@@ -79,16 +79,6 @@
                             </value>
                           </block>
                         </value>
-                        <next>
-                          <block type="variables_set" id="74" inline="true">
-                            <field name="VAR">Y</field>
-                            <value name="VALUE">
-                              <block type="math_number" id="81">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                          </block>
-                        </next>
                       </block>
                     </next>
                   </block>
