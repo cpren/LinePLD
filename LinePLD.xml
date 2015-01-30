@@ -13,10 +13,10 @@
           <block type="movement_leftmotor" id="21" inline="true">
             <value name="MOVLEFT">
               <block type="math_arithmetic" id="75" inline="true">
-                <field name="OP">MINUS</field>
+                <field name="OP">ADD</field>
                 <value name="A">
                   <block type="math_number" id="82">
-                    <field name="NUM">100</field>
+                    <field name="NUM">15</field>
                   </block>
                 </value>
                 <value name="B">
@@ -29,8 +29,18 @@
             <next>
               <block type="movement_rightmotor" id="31" inline="true">
                 <value name="MOVRIGHT">
-                  <block type="sensor_spectrometer" id="268">
-                    <field name="LIGHT">BLUE</field>
+                  <block type="math_arithmetic" id="304" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="math_number" id="311">
+                        <field name="NUM">85</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="sensor_spectrometer" id="268">
+                        <field name="LIGHT">BLUE</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
               </block>
