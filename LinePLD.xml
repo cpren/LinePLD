@@ -101,73 +101,82 @@
                                                   <block type="movement_setmotors" id="147" inline="true">
                                                     <value name="BOTHMOVLEFT">
                                                       <block type="math_number" id="160">
-                                                        <field name="NUM">100</field>
+                                                        <field name="NUM">0</field>
                                                       </block>
                                                     </value>
                                                     <value name="BOTHMOVRIGHT">
                                                       <block type="math_number" id="167">
-                                                        <field name="NUM">100</field>
+                                                        <field name="NUM">0</field>
                                                       </block>
                                                     </value>
                                                     <next>
-                                                      <block type="comment_comment" id="26">
-                                                        <field name="TEXT">Read In Value</field>
+                                                      <block type="robot_delay" id="169" inline="true">
+                                                        <value name="DELAY">
+                                                          <block type="math_number" id="176">
+                                                            <field name="NUM">250</field>
+                                                          </block>
+                                                        </value>
                                                         <next>
-                                                          <block type="variables_set" id="27" inline="true">
-                                                            <field name="VAR">Sqaure</field>
-                                                            <value name="VALUE">
-                                                              <block type="sensor_spectrometer" id="28">
-                                                                <field name="LIGHT">BLUE</field>
-                                                              </block>
-                                                            </value>
+                                                          <block type="comment_comment" id="26">
+                                                            <field name="TEXT">Read In Value</field>
                                                             <next>
-                                                              <block type="comment_comment" id="149">
-                                                                <field name="TEXT">Pause </field>
+                                                              <block type="variables_set" id="27" inline="true">
+                                                                <field name="VAR">Sqaure</field>
+                                                                <value name="VALUE">
+                                                                  <block type="sensor_spectrometer" id="28">
+                                                                    <field name="LIGHT">BLUE</field>
+                                                                  </block>
+                                                                </value>
                                                                 <next>
-                                                                  <block type="comment_comment" id="29">
-                                                                    <field name="TEXT">Check To See If Its Dark</field>
+                                                                  <block type="comment_comment" id="149">
+                                                                    <field name="TEXT">Pause </field>
                                                                     <next>
-                                                                      <block type="controls_if" id="30" inline="false">
-                                                                        <value name="IF0">
-                                                                          <block type="logic_compare" id="31" inline="true">
-                                                                            <field name="OP">LT</field>
-                                                                            <value name="A">
-                                                                              <block type="variables_get" id="32">
-                                                                                <field name="VAR">Sqaure</field>
-                                                                              </block>
-                                                                            </value>
-                                                                            <value name="B">
-                                                                              <block type="math_arithmetic" id="33" inline="true">
-                                                                                <field name="OP">ADD</field>
+                                                                      <block type="comment_comment" id="29">
+                                                                        <field name="TEXT">Check To See If Its Dark</field>
+                                                                        <next>
+                                                                          <block type="controls_if" id="30" inline="false">
+                                                                            <value name="IF0">
+                                                                              <block type="logic_compare" id="31" inline="true">
+                                                                                <field name="OP">LT</field>
                                                                                 <value name="A">
-                                                                                  <block type="variables_get" id="34">
-                                                                                    <field name="VAR">First</field>
-                                                                                  </block>
-                                                                                </value>
-                                                                                <value name="B">
-                                                                                  <block type="math_number" id="35">
-                                                                                    <field name="NUM">10</field>
-                                                                                  </block>
-                                                                                </value>
-                                                                              </block>
-                                                                            </value>
-                                                                          </block>
-                                                                        </value>
-                                                                        <statement name="DO0">
-                                                                          <block type="comment_comment" id="36">
-                                                                            <field name="TEXT">Set Final Location</field>
-                                                                            <next>
-                                                                              <block type="variables_set" id="37" inline="true">
-                                                                                <field name="VAR">Location</field>
-                                                                                <value name="VALUE">
-                                                                                  <block type="variables_get" id="38">
+                                                                                  <block type="variables_get" id="32">
                                                                                     <field name="VAR">Sqaure</field>
                                                                                   </block>
                                                                                 </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_arithmetic" id="33" inline="true">
+                                                                                    <field name="OP">ADD</field>
+                                                                                    <value name="A">
+                                                                                      <block type="variables_get" id="34">
+                                                                                        <field name="VAR">First</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <block type="math_number" id="35">
+                                                                                        <field name="NUM">10</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
                                                                               </block>
-                                                                            </next>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="comment_comment" id="36">
+                                                                                <field name="TEXT">Set Final Location</field>
+                                                                                <next>
+                                                                                  <block type="variables_set" id="37" inline="true">
+                                                                                    <field name="VAR">Location</field>
+                                                                                    <value name="VALUE">
+                                                                                      <block type="variables_get" id="38">
+                                                                                        <field name="VAR">Sqaure</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
                                                                           </block>
-                                                                        </statement>
+                                                                        </next>
                                                                       </block>
                                                                     </next>
                                                                   </block>
