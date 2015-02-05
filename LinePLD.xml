@@ -177,15 +177,39 @@
                                   <block type="comment_comment" id="40">
                                     <field name="TEXT">Display Location</field>
                                     <next>
-                                      <block type="oled_drawtext" id="41">
-                                        <field name="TEXT">Location =</field>
-                                        <next>
-                                          <block type="oled_drawnumber" id="42" inline="true">
-                                            <value name="NUMBER">
-                                              <block type="variables_get" id="43">
+                                      <block type="controls_if" id="59" inline="false">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="69" inline="true">
+                                            <field name="OP">NEQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="79">
                                                 <field name="VAR">Location</field>
                                               </block>
                                             </value>
+                                            <value name="B">
+                                              <block type="math_number" id="86">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="oled_drawtext" id="41">
+                                            <field name="TEXT">Location =</field>
+                                            <next>
+                                              <block type="oled_drawnumber" id="42" inline="true">
+                                                <value name="NUMBER">
+                                                  <block type="variables_get" id="43">
+                                                    <field name="VAR">Location</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="oled_drawtext" id="95">
+                                            <field name="TEXT">Did Not Read</field>
                                           </block>
                                         </next>
                                       </block>
