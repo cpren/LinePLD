@@ -41,7 +41,7 @@
                             <field name="MODE">UNTIL</field>
                             <value name="NUMBER">
                               <block type="logic_compare" id="12" inline="true">
-                                <field name="OP">LT</field>
+                                <field name="OP">GT</field>
                                 <value name="A">
                                   <block type="variables_get" id="13">
                                     <field name="VAR">Count</field>
