@@ -99,6 +99,16 @@
                                                 </value>
                                                 <next>
                                                   <block type="movement_setmotors" id="147" inline="true">
+                                                    <value name="BOTHMOVLEFT">
+                                                      <block type="math_number" id="160">
+                                                        <field name="NUM">100</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="BOTHMOVRIGHT">
+                                                      <block type="math_number" id="167">
+                                                        <field name="NUM">100</field>
+                                                      </block>
+                                                    </value>
                                                     <next>
                                                       <block type="comment_comment" id="26">
                                                         <field name="TEXT">Read In Value</field>
