@@ -218,30 +218,22 @@
                                   </block>
                                 </value>
                                 <statement name="DO0">
-                                  <block type="oled_cleardisplay" id="128">
+                                  <block type="oled_drawtext" id="41">
+                                    <field name="TEXT">Location =</field>
                                     <next>
-                                      <block type="oled_drawtext" id="41">
-                                        <field name="TEXT">Location =</field>
-                                        <next>
-                                          <block type="oled_drawnumber" id="42" inline="true">
-                                            <value name="NUMBER">
-                                              <block type="variables_get" id="43">
-                                                <field name="VAR">Location</field>
-                                              </block>
-                                            </value>
+                                      <block type="oled_drawnumber" id="42" inline="true">
+                                        <value name="NUMBER">
+                                          <block type="variables_get" id="43">
+                                            <field name="VAR">Location</field>
                                           </block>
-                                        </next>
+                                        </value>
                                       </block>
                                     </next>
                                   </block>
                                 </statement>
                                 <statement name="ELSE">
-                                  <block type="oled_cleardisplay" id="137">
-                                    <next>
-                                      <block type="oled_drawtext" id="95">
-                                        <field name="TEXT">Did Not Read</field>
-                                      </block>
-                                    </next>
+                                  <block type="oled_drawtext" id="95">
+                                    <field name="TEXT">Did Not Read</field>
                                   </block>
                                 </statement>
                                 <next>
